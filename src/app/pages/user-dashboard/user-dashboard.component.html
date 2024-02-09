@@ -1,0 +1,43 @@
+<div class="container shadow">
+    <a class="text-primary fw-bold" routerLink="/">Log Out</a>
+    <button class="btn btn-primary mb-3" (click)="toggleView()">View Profile</button>
+    <div class="col-md-4 mx-auto mt-4">
+      <div class="card shadow-sm" *ngIf="viewProfile">
+        <div class="card-header">
+          <h3>Profile Details</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-center gap-3">
+            <strong>Matric No:</strong>
+            <p class="m-0">{{ user.matricNo }}</p>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3">
+            <strong>First name:</strong>
+            <p class="m-0">{{ user.firstName }}</p>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3">
+            <strong>Last name:</strong>
+            <p class="m-0">{{ user.lastName }}</p>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3">
+            <strong>Email:</strong>
+            <p class="m-0">{{ user.email }}</p>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3">
+            <strong>Phone:</strong>
+            <p class="m-0">{{ user.phone }}</p>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3">
+            <strong>Address:</strong>
+            <p class="m-0">{{ user.address }}</p>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3">
+            <strong>Gender:</strong>
+            <p class="m-0">{{ user.gender }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+

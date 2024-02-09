@@ -1,0 +1,58 @@
+<div class="container shadow">
+    <a class="text-primary fw-bold" routerLink="/">Log Out</a>
+    <div class="card shadow-sm mt-4 col-md-8 mx-auto overflow-scroll">
+      <div class="card-body">
+        <table class="table table-striped table-responsive">
+          <thead>
+            <tr>
+              <th>Matric no</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Gender</th>
+              <th>Address</th>
+              <th>User type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of users; track $index) {
+            <tr>
+              <td>{{ user.matricNo }}</td>
+              <td>{{ user.firstName }}</td>
+              <td>{{ user.lastName }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.gender }}</td>
+              <td>{{ user.address }}</td>
+              <td>{{ user.userType }}</td>
+              <td>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-primary btn-sm dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Actions
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button
+                        (click)="onDelete(user.matricNo)"
+                        class="btn btn-danger"
+                      >
+                        Delete
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
